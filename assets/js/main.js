@@ -1,18 +1,8 @@
-// TO DO Initialization game function
-//function NewGame() { 
-//let globalPlayer1 = 0;
-//let globalPlayer2 = 0;
-// let roundPlayer1 = 0;
-//  let roundPlayer2 = 0;
-//}
-
 // Initialization Game
 let player = [
     "Player1",
     "Player2",
 ]
-
-let global = 0;
 let globalPlayer1 = 0;
 let globalPlayer2 = 0;
 
@@ -92,4 +82,15 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
             console.log("Vous avez gagné la partie Player 2");
         }
     }
+});
+
+//New Game 
+
+let NewGameClick = document.getElementById("NewGame").addEventListener("click", (event) => {
+
+    // Reinitialize the game variable
+        globalPlayer1 = 0;
+        globalPlayer2 = 0;
+        round = 0;
+        console.log ("New Game")
 });
