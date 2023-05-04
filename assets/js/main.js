@@ -1,10 +1,17 @@
 function NewGame() {
-    let global = 0;
+    let globalPlayer1 = 0;
+    let globalPlayer2 = 0;
+    let roundPlayer1 = 0;
+    let roundPlayer2 = 0;
 }
 
+
+// Set Up Round
+let round = 0;
+
+// Roll Dice
 let RollDiceClick = document.getElementById("RollDice").addEventListener("click", (event) => {
 
-    // Roll Dice
     function RollDice(min, max) {
         min = Math.ceil(1);
         max = Math.floor(6);
@@ -12,25 +19,13 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
     }
 
     // Conditions on Roll Dice
-    if (RollDice() === 1) {
-        console.log("1")
-    }
-    else if (RollDice() === 2) {
-        console.log("2")
-    }
-    else if (RollDice() === 3) {
-        console.log("3")
-    }
-
-    else if (RollDice() === 4) {
-        console.log("4")
-    }
-
-    else if (RollDice() === 5) {
-        console.log("5")
+    if (RollDice() == 1) {
+        round = 0;
+        console.log("Perdu - Retour à 0");
     }
     else {
-        console.log("6")
+        round = (round + RollDice());
+        console.log(round);
     }
 });
 
