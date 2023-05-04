@@ -6,6 +6,8 @@ function NewGame() {
 }
 
 
+let global = 0;
+
 // Set Up Round
 let round = 0;
 
@@ -29,7 +31,14 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
     }
 });
 
+// Hold Action
+let HoldClick = document.getElementById("Hold").addEventListener("click", (event) => {
+    global = (global + round);
+    round = 0;
+    console.log(global);
 
-function Hold() {
-
-}
+    if (global >= 100 ) {
+        console.log (global)
+        console.log ("Vous avez gagné la partie");
+    }
+});
