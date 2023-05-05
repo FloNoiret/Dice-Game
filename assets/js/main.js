@@ -28,11 +28,15 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
             console.log("Perdu Player1 - Retour à 0");
             currentPlayer = "Player2"; // Player 2 turn
 
+
         }
         else {
             round = (round + RollDice());
             console.log(round);
+            
         }
+
+        document.getElementById("roundPlayer1").innerText = round;
     }
 
     // Player 2 turn to roll dice 
@@ -45,8 +49,10 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
         else {
             round = (round + RollDice());
             console.log(round);
+        
         }
 
+        document.getElementById("roundPlayer2").innerText = round;
     }
 });
 
@@ -56,8 +62,11 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
     // Player 1 Turn & hold
     if (currentPlayer == "Player1") {
         globalPlayer1 = (globalPlayer1 + round);// Addition Round to global
+        document.getElementById("globalPlayer1").innerText = globalPlayer1;
+        
         round = 0; // Return to Zero for next round
-        console.log("Total Player1 :" + globalPlayer1);
+        document.getElementById("roundPlayer1").innerText = round;
+        
 
         currentPlayer = "Player2"; // Player 2 turn
         console.log("Au tour de Player 2");
@@ -71,8 +80,11 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
 
     else {
         globalPlayer2 = (globalPlayer2 + round); // Addition Round to global
+        document.getElementById("globalPlayer2").innerText = globalPlayer2;
+
         round = 0; // Return to Zero for next round
-        console.log("Total Player2 :" + globalPlayer2);
+        document.getElementById("roundPlayer2").innerText = round;
+        
 
         currentPlayer = "Player1"; // Player 1 turn
         console.log("Au tour de Player 1");
@@ -83,6 +95,13 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         }
     }
 });
+
+
+
+//Results Display
+
+
+
 
 //New Game 
 
