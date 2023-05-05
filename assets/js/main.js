@@ -63,7 +63,7 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
     if (currentPlayer == "Player1") {
         globalPlayer1 = (globalPlayer1 + round);// Addition Round to global
         document.getElementById("globalPlayer1").innerText = globalPlayer1;
-        
+
         round = 0; // Return to Zero for next round
         document.getElementById("roundPlayer1").innerText = round;
         
@@ -109,7 +109,12 @@ let NewGameClick = document.getElementById("NewGame").addEventListener("click", 
 
     // Reinitialize the game variable
         globalPlayer1 = 0;
+        document.getElementById("globalPlayer1").innerText = globalPlayer1;
         globalPlayer2 = 0;
+        document.getElementById("globalPlayer2").innerText = globalPlayer2;
         round = 0;
+        document.getElementById("roundPlayer1").innerText = round;
+        document.getElementById("roundPlayer2").innerText = round;
+
         console.log ("New Game")
 });
