@@ -35,8 +35,8 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
         else {
             round = (round + result);
             console.log(round);
-            document.getElementById("roundPlayer1").innerText = round;
         }
+        document.getElementById("roundPlayer1").innerText = round;
     }
     // Player 2 turn to roll dice 
     else {
@@ -53,30 +53,30 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
         }
         document.getElementById("roundPlayer2").innerText = round;
     }
-        //Dice Display
-        if (result == 1) {
-            document.getElementById("dice").src = "./assets/images/1.jpg";
-        }
-        else if (result == 2) {
-            document.getElementById("dice").src = "./assets/images/2.jpg";
-        }
-        else if (result == 3) {
-            document.getElementById("dice").src = "./assets/images/3.jpg";
-        }
-        else if (result == 4) {
-            document.getElementById("dice").src = "./assets/images/4.jpg";
-        }
-        else if (result == 5) {
-            document.getElementById("dice").src = "./assets/images/5.jpg";
-        }
-        else if (result == 6) {
-            document.getElementById("dice").src = "./assets/images/6.jpg";
-        }
-        else {
-            console.log("error display dice")
-        }
+    //Dice Display
+    if (result == 1) {
+        document.getElementById("dice").src = "./assets/images/1.jpg";
+    }
+    else if (result == 2) {
+        document.getElementById("dice").src = "./assets/images/2.jpg";
+    }
+    else if (result == 3) {
+        document.getElementById("dice").src = "./assets/images/3.jpg";
+    }
+    else if (result == 4) {
+        document.getElementById("dice").src = "./assets/images/4.jpg";
+    }
+    else if (result == 5) {
+        document.getElementById("dice").src = "./assets/images/5.jpg";
+    }
+    else if (result == 6) {
+        document.getElementById("dice").src = "./assets/images/6.jpg";
+    }
+    else {
+        console.log("error display dice")
+    }
 
-    });
+});
 
 
 // Hold Action
