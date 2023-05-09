@@ -15,25 +15,55 @@ main {
     position: relative; 
     justify-content: center; 
     align-items: center;
+    background: linear-gradient(90deg, rgb(235, 235, 235) 50%, white 50%);;
+    margin:70px;
 }
 
-.player1side {
+/* Player Elements */
+.player-side {
     display: flex; 
     position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5%;
 }
 
-.player2side {
-    display: flex; 
+h2 {
+    margin-top: 130px;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.global{
+    font-size: 100px;
+    font-weight: 100px;
+    letter-spacing: 1px;
+    margin-bottom: 70px;
+    color: #ff5757;
+}
+
+.current-round {
+    display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5%;
+    background-color: #ff5757;
+    padding: 10px 50px 10px 50px; 
+    margin: 70px;
 }
+
+p{
+    margin: 5px; 
+}
+
+.round{
+    font-size: 30px;
+    color: white; 
+}
+
+
 
 /* Game Controls Elements */
 .gamecontrols{
@@ -72,11 +102,6 @@ svg {
 
 
 /* Player Turn */
-h2 {
-    font-weight: 100;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 .turnplayer {
     font-weight: 700;
