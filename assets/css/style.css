@@ -7,3 +7,12 @@ body {
 }
 
 
+h2 {
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.turnplayer {
+    font-weight: 700;
+}

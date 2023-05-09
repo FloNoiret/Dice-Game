@@ -24,11 +24,13 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
 
     // Player 1 turn to roll dice
     if (currentPlayer == "Player1") {
-
         if (result == 1) {
             round = 0;
             console.log("Perdu Player1 - Retour à 0");
             currentPlayer = "Player2"; // Player 2 turn
+            document.getElementById("turnPlayer2").classList.add('turnplayer');
+            document.getElementById("turnPlayer1").classList.remove('turnplayer');
+
         }
         else {
             round = (round + result);
@@ -42,6 +44,8 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
             round = 0;
             console.log("Perdu Player2- Retour à 0");
             currentPlayer = "Player1"; // Player 1 turn
+            document.getElementById("turnPlayer1").classList.add('turnplayer');
+            document.getElementById("turnPlayer2").classList.remove('turnplayer');
         }
         else {
             round = (round + result);
@@ -89,6 +93,8 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
 
         currentPlayer = "Player2"; // Player 2 turn
         console.log("Au tour de Player 2");
+        document.getElementById("turnPlayer2").classList.add('turnplayer');
+        document.getElementById("turnPlayer1").classList.remove('turnplayer');
 
         if (globalPlayer1 >= 100) {
             console.log("Victoire Player1 :" + globalPlayer1);
@@ -107,6 +113,8 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
 
         currentPlayer = "Player1"; // Player 1 turn
         console.log("Au tour de Player 1");
+        document.getElementById("turnPlayer1").classList.add('turnplayer');
+        document.getElementById("turnPlayer2").classList.remove('turnplayer');
 
         if (globalPlayer2 >= 100) {
             console.log("Victoire Player2 :" + globalPlayer2);
@@ -127,6 +135,8 @@ let NewGameClick = document.getElementById("NewGame").addEventListener("click", 
     round = 0;
     document.getElementById("roundPlayer1").innerText = round;
     document.getElementById("roundPlayer2").innerText = round;
+    document.getElementById("turnPlayer1").classList.add('turnplayer');
+    document.getElementById("turnPlayer2").classList.remove('turnplayer');
 
     console.log("New Game")
 });
