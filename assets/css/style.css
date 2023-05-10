@@ -228,4 +228,17 @@ h3 {
         margin: 2%;
         margin-left: 2%;
     }
+
+    .orientation-warning {
+        font-size: 20px;
+        color: #ff5757;
+        padding: 10%;
+        width: 60%;
+        text-align: center;
+    }
+
+    .orientation-warning img {
+        width: 80%;
+        padding: 5%;
+    }
 }

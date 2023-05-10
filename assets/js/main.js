@@ -149,13 +149,13 @@ let NewGameClick = document.getElementById("NewGame").addEventListener("click", 
 
 // Screen Orientation 
 
-screen.orientation.addEventListener('change', function() {
+screen.orientation.addEventListener('change', function () {
 
-    let orientation = screen.orientation.type; 
+    let orientation = screen.orientation.type;
     console.log('new orientation is ', orientation);
 
-    if (orientation == 'portrait-primary' || orientation == 'portrait'){
-        console.log ('Change ton orientation pour Paysage'); 
-        document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info">  Please switch to landscape orientation to enjoy the game </p> <img src="./assets/images/Switch-to-landscape.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
+    if (orientation == 'portrait-primary' || orientation == 'portrait') {
+        console.log('Change ton orientation pour Paysage');
+        document.getElementById("main").innerHTML = '<div class="orientation-warning"> <p>Please switch to landscape orientation to play the game </p> <img src="./assets/images/Switch-to-landscape.png"> <div>';
     }
-    });
+});
