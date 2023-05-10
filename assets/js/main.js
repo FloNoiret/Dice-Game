@@ -30,6 +30,7 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
             currentPlayer = "Player2"; // Player 2 turn
             document.getElementById("turnPlayer2").classList.add('turnplayer');
             document.getElementById("turnPlayer1").classList.remove('turnplayer');
+            document.getElementById("dialog-info").innerHTML = "<dialog open class='dialog-info'> Nooo ! You got a 1 ! <br> It's Player 2 turn <form method='dialog'> <button class='dialog-btn'>OK</button> </form> </dialog>";
 
         }
         else {
@@ -46,6 +47,7 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
             currentPlayer = "Player1"; // Player 1 turn
             document.getElementById("turnPlayer1").classList.add('turnplayer');
             document.getElementById("turnPlayer2").classList.remove('turnplayer');
+            document.getElementById("dialog-info").innerHTML = "<dialog open class='dialog-info'> Nooo ! You got a 1 ! <br> It's Player 1 turn <form method='dialog'> <button class='dialog-btn'>OK</button> </form> </dialog>";
         }
         else {
             round = (round + result);
@@ -96,9 +98,10 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         document.getElementById("turnPlayer2").classList.add('turnplayer');
         document.getElementById("turnPlayer1").classList.remove('turnplayer');
 
-        if (globalPlayer1 >= 100) {
+        if (globalPlayer1 >= 10) {
             console.log("Victoire Player1 :" + globalPlayer1);
             console.log("Vous avez gagné la partie Player 1");
+            document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> Congratulation ! <br> You won Player 1 ! <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
         }
     }
     //Player 2 Turn & hold
@@ -116,9 +119,10 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         document.getElementById("turnPlayer1").classList.add('turnplayer');
         document.getElementById("turnPlayer2").classList.remove('turnplayer');
 
-        if (globalPlayer2 >= 100) {
+        if (globalPlayer2 >= 10) {
             console.log("Victoire Player2 :" + globalPlayer2);
             console.log("Vous avez gagné la partie Player 2");
+            document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> Congratulation ! <br> You won Player 2 ! <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
         }
     }
 });
