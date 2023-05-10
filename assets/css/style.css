@@ -23,10 +23,8 @@ main {
     justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, rgb(235, 235, 235) 50%, white 50%);
-    ;
     margin: 70px;
 }
-
 
 
 footer {
@@ -53,7 +51,7 @@ h2 {
 
 .global {
     font-size: 100px;
-    font-weight: 100px;
+    font-weight: 100;
     letter-spacing: 1px;
     margin-bottom: 70px;
     color: #ff5757;
@@ -136,7 +134,7 @@ svg {
 
 /*Dialog Modal*/
 .dialog-info {
-    height: 30%;
+    z-index:2; 
     top: 55%;
     font-family: 'Lato', sans-serif;
     font-size: 36px;
@@ -149,15 +147,13 @@ svg {
 }
 
 .dialog-btn {
-    margin: 50px;
+    margin-top: 50px;
     color: #ff5757;
     font-size: 30px;
     border: solid 2px #ff5757;
 }
 
 .dialog-info-win {
-    width: 70%;
-    height: 60%;
     top: 10%;
     font-family: 'Lato', sans-serif;
     font-size: 36px;
@@ -186,4 +182,50 @@ aside {
 h3 {
     text-transform: uppercase;
     text-decoration: underline;
+}
+
+/* Responsive*/
+
+@media screen and (max-width: 992px) {
+
+    html,
+    body {
+        width: 99%;
+        overflow-x: hidden;
+    }
+
+    main {
+        margin: 0;
+    }
+
+    h2 {
+        margin-top: 2%;
+    }
+
+    .dice-img {
+        width: 50%;
+        margin: 30%;
+    }
+
+    .current-round {
+        margin: 5%;
+    }
+
+    button {
+        font-size: 16px;
+        margin: 10%;
+        padding: 0;
+    }
+
+    svg {
+        width: 16px;
+    }
+
+    aside {
+        color: white;
+        font-size: 16px;
+        margin-bottom: 50px;
+        margin: 2%;
+        margin-left: 2%;
+    }
 }

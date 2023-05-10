@@ -1,3 +1,4 @@
+
 // Initialization Game
 let player = [
     "Player1",
@@ -101,7 +102,7 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         if (globalPlayer1 >= 10) {
             console.log("Victoire Player1 :" + globalPlayer1);
             console.log("Vous avez gagné la partie Player 1");
-            document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> Congratulation ! <br> You won Player 1 ! <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
+            document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> <p> Congratulation ! <br> You won Player 1 ! </p> <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
         }
     }
     //Player 2 Turn & hold
@@ -122,7 +123,7 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         if (globalPlayer2 >= 10) {
             console.log("Victoire Player2 :" + globalPlayer2);
             console.log("Vous avez gagné la partie Player 2");
-            document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> Congratulation ! <br> You won Player 2 ! <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
+            document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> <p> Congratulation ! <br> You won Player 2 ! </p> <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
         }
     }
 });
@@ -144,3 +145,17 @@ let NewGameClick = document.getElementById("NewGame").addEventListener("click", 
 
     console.log("New Game")
 });
+
+
+// Screen Orientation 
+
+screen.orientation.addEventListener('change', function() {
+
+    let orientation = screen.orientation.type; 
+    console.log('new orientation is ', orientation);
+
+    if (orientation == 'portrait-primary' || orientation == 'portrait'){
+        console.log ('Change ton orientation pour Paysage'); 
+        document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info">  Please switch to landscape orientation to enjoy the game </p> <img src="./assets/images/Switch-to-landscape.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
+    }
+    });
