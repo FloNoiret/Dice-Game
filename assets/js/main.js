@@ -76,9 +76,9 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
         document.getElementById("dice").src = "./assets/images/6.jpg";
     }
     else {
-        console.log("error display dice")
+        console.log("error display dice");
+        alert('A problem has occured');
     }
-
 });
 
 
@@ -95,13 +95,13 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
 
 
         currentPlayer = "Player2"; // Player 2 turn
-        console.log("Au tour de Player 2");
+        console.log("Player 2 turn");
         document.getElementById("turnPlayer2").classList.add('turnplayer');
         document.getElementById("turnPlayer1").classList.remove('turnplayer');
 
         if (globalPlayer1 >= 100) {
-            console.log("Victoire Player1 :" + globalPlayer1);
-            console.log("Vous avez gagné la partie Player 1");
+            console.log("Victory to Player1 :" + globalPlayer1);
+            console.log("You won Player 1");
             document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> <p> Congratulation ! <br> You won Player 1 ! </p> <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
         }
     }
@@ -116,13 +116,13 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
 
 
         currentPlayer = "Player1"; // Player 1 turn
-        console.log("Au tour de Player 1");
+        console.log("Player 1 turn");
         document.getElementById("turnPlayer1").classList.add('turnplayer');
         document.getElementById("turnPlayer2").classList.remove('turnplayer');
 
         if (globalPlayer2 >= 100) {
-            console.log("Victoire Player2 :" + globalPlayer2);
-            console.log("Vous avez gagné la partie Player 2");
+            console.log("Victory to Player2 :" + globalPlayer2);
+            console.log("You won Player 2");
             document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> <p> Congratulation ! <br> You won Player 2 ! </p> <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
         }
     }
@@ -149,16 +149,28 @@ let NewGameClick = document.getElementById("NewGame").addEventListener("click", 
 
 // Screen Orientation 
 
+
 screen.orientation.addEventListener('change', function () {
 
     let orientation = screen.orientation.type;
-    console.log('new orientation is ', orientation);
 
     if (orientation == 'portrait-primary' || orientation == 'portrait') {
-        console.log('Change ton orientation pour Paysage');
+        console.log('Change your orientation to Landscape');
         document.getElementById("body").innerHTML = '<div class="orientation-warning"> <p>Please switch to landscape orientation to play <br> DICE GAME </p> <img src="./assets/images/Switch-to-landscape.png"> <div>';
     }
     else {
         location.reload();
     }
 });
+
+function initialPortrait() {
+    return window.innerHeight > window.innerWidth;
+}
+
+window.onload = function () {
+
+    if (initialPortrait()) {
+        console.log('You are currently in portrait mode, please change to Landscape')
+        document.getElementById("body").innerHTML = '<div class="orientation-warning"> <p>Please switch to landscape orientation to play <br> DICE GAME </p> <img src="./assets/images/Switch-to-landscape.png"> <div>';
+    }
+};
