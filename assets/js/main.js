@@ -15,13 +15,14 @@ let currentPlayer = "Player1";
 function RollDice(min, max) {
     min = Math.ceil(1);
     max = Math.floor(6);
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 // Execute Roll Dice on click
 let RollDiceClick = document.getElementById("RollDice").addEventListener("click", (event) => {
 
     var result = RollDice();
+    console.log(result);
 
     // Player 1 turn to roll dice
     if (currentPlayer == "Player1") {
@@ -149,8 +150,20 @@ let NewGameClick = document.getElementById("NewGame").addEventListener("click", 
 
 // Screen Orientation 
 
+function initialPortrait() {
+    return screen.orientation.type == 'portrait-primary' || screen.orientation.type == 'portrait';
+}
 
-screen.orientation.addEventListener('change', function () {
+window.onload = function () {
+
+    if (initialPortrait()) {
+        console.log('You are currently in portrait mode, please change to Landscape')
+        document.getElementById("body").innerHTML = '<div class="orientation-warning"> <p>Please switch to landscape orientation to play <br> DICE GAME </p> <img src="./assets/images/Switch-to-landscape.png"> <div>';
+    }
+};
+
+
+screen.orientation.addEventListener('change', function () { // Track screen orientation change
 
     let orientation = screen.orientation.type;
 
@@ -163,14 +176,4 @@ screen.orientation.addEventListener('change', function () {
     }
 });
 
-function initialPortrait() {
-    return window.innerHeight > window.innerWidth;
-}
 
-window.onload = function () {
-
-    if (initialPortrait()) {
-        console.log('You are currently in portrait mode, please change to Landscape')
-        document.getElementById("body").innerHTML = '<div class="orientation-warning"> <p>Please switch to landscape orientation to play <br> DICE GAME </p> <img src="./assets/images/Switch-to-landscape.png"> <div>';
-    }
-};
