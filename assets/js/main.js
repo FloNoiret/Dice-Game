@@ -156,6 +156,9 @@ screen.orientation.addEventListener('change', function () {
 
     if (orientation == 'portrait-primary' || orientation == 'portrait') {
         console.log('Change ton orientation pour Paysage');
-        document.getElementById("main").innerHTML = '<div class="orientation-warning"> <p>Please switch to landscape orientation to play the game </p> <img src="./assets/images/Switch-to-landscape.png"> <div>';
+        document.getElementById("body").innerHTML = '<div class="orientation-warning"> <p>Please switch to landscape orientation to play <br> DICE GAME </p> <img src="./assets/images/Switch-to-landscape.png"> <div>';
+    }
+    else {
+        location.reload();
     }
 });
