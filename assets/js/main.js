@@ -99,7 +99,7 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         document.getElementById("turnPlayer2").classList.add('turnplayer');
         document.getElementById("turnPlayer1").classList.remove('turnplayer');
 
-        if (globalPlayer1 >= 10) {
+        if (globalPlayer1 >= 100) {
             console.log("Victoire Player1 :" + globalPlayer1);
             console.log("Vous avez gagné la partie Player 1");
             document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> <p> Congratulation ! <br> You won Player 1 ! </p> <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
@@ -120,7 +120,7 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         document.getElementById("turnPlayer1").classList.add('turnplayer');
         document.getElementById("turnPlayer2").classList.remove('turnplayer');
 
-        if (globalPlayer2 >= 10) {
+        if (globalPlayer2 >= 100) {
             console.log("Victoire Player2 :" + globalPlayer2);
             console.log("Vous avez gagné la partie Player 2");
             document.getElementById("dialog-info").innerHTML = '<dialog open class="dialog-info-win"> <p> Congratulation ! <br> You won Player 2 ! </p> <img src="./assets/images/Congratulation.png"><form method="dialog"> <button class="dialog-btn">OK</button> </form> </dialog>';
