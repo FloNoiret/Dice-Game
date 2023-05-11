@@ -26,12 +26,16 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
 
     // Player 1 turn to roll dice
     if (currentPlayer == "Player1") {
+
         if (result == 1) {
             round = 0;
             console.log("Perdu Player1 - Retour à 0");
             currentPlayer = "Player2"; // Player 2 turn
-            document.getElementById("turnPlayer2").classList.add('turnplayer');
+            document.getElementById("turnPlayer2").classList.add('turnplayer'); // Indicator + Txt change
             document.getElementById("turnPlayer1").classList.remove('turnplayer');
+            document.getElementById("main").classList.add('turnplayer2-background'); // Background Change
+            document.getElementById("main").classList.remove('turnplayer1-background');
+
             document.getElementById("dialog-info").innerHTML = "<dialog open class='dialog-info'> Nooo ! You got a 1 ! <br> It's Player 2 turn <form method='dialog'> <button class='dialog-btn'>OK</button> </form> </dialog>";
 
         }
@@ -43,12 +47,15 @@ let RollDiceClick = document.getElementById("RollDice").addEventListener("click"
     }
     // Player 2 turn to roll dice 
     else {
+
         if (result == 1) {
             round = 0;
             console.log("Perdu Player2- Retour à 0");
             currentPlayer = "Player1"; // Player 1 turn
-            document.getElementById("turnPlayer1").classList.add('turnplayer');
+            document.getElementById("turnPlayer1").classList.add('turnplayer');  // Indicator + Txt change
             document.getElementById("turnPlayer2").classList.remove('turnplayer');
+            document.getElementById("main").classList.add('turnplayer1-background'); // Background change
+            document.getElementById("main").classList.remove('turnplayer2-background');
             document.getElementById("dialog-info").innerHTML = "<dialog open class='dialog-info'> Nooo ! You got a 1 ! <br> It's Player 1 turn <form method='dialog'> <button class='dialog-btn'>OK</button> </form> </dialog>";
         }
         else {
@@ -99,6 +106,8 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         console.log("Player 2 turn");
         document.getElementById("turnPlayer2").classList.add('turnplayer');
         document.getElementById("turnPlayer1").classList.remove('turnplayer');
+        document.getElementById("main").classList.add('turnplayer2-background'); 
+        document.getElementById("main").classList.remove('turnplayer1-background');
 
         if (globalPlayer1 >= 100) {
             console.log("Victory to Player1 :" + globalPlayer1);
@@ -120,6 +129,8 @@ let HoldClick = document.getElementById("Hold").addEventListener("click", (event
         console.log("Player 1 turn");
         document.getElementById("turnPlayer1").classList.add('turnplayer');
         document.getElementById("turnPlayer2").classList.remove('turnplayer');
+        document.getElementById("main").classList.add('turnplayer1-background'); 
+        document.getElementById("main").classList.remove('turnplayer2-background');
 
         if (globalPlayer2 >= 100) {
             console.log("Victory to Player2 :" + globalPlayer2);
